@@ -1,0 +1,67 @@
+@use "../variables/colors";
+@use "../variables/font" as fonts;
+
+footer{
+    color: colors.$light-text;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: fit-content;
+    align-items: center;
+    padding: 5px;
+    padding-left: 21em;
+    //margin-left: 30%;
+    & h3{
+        font-size: fonts.$h3-medium;
+    }
+    & p{
+        font-size: 2em;
+        white-space: nowrap;
+        overflow: hidden;   
+        margin-right: 5px;
+        animation: typing 3s steps(27) infinite alternate, blinking 0.1s infinite;
+        //margin-right: 10px;
+        //margin-right: 13px;
+        border-right: 1px solid white;
+    }
+    & form{
+        & input{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            height: 30px;
+            width: 250px;
+            text-align: center;
+            transition: width 1s linear;
+            &:focus{
+                outline: none;
+                width: 500px;
+            }
+        }
+        
+    }
+   
+}
+.animate-fixer{
+    align-items: center;
+    padding: 10px;
+}
+@keyframes typing {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+@keyframes blinking {
+    0% {
+      border-right: none;
+    }
+    50% {
+      border-right: 1px solid white;
+    }
+  }

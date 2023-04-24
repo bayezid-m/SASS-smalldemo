@@ -1,0 +1,259 @@
+@use "../variables/colors";
+@use "../variables/font" as fonts;
+@use "../mixins/bgimage" as image;
+@use "../mixins/button" as button;
+.section1{
+    display: grid;
+    gap: 1em;
+    margin: 3.5em;
+    grid-template-areas: 
+    "card1 card1 card2 card3"
+    "card1 card1 card4 card5";
+    & article{
+        padding: 10px;
+        justify-content: space-between;
+        border-radius: 15px; 
+    }
+    & article:hover{
+        transform: translateY(-2%);
+    }
+    & article:nth-child(1){
+        grid-area: card1;
+        align-items: center;
+        justify-content: center;
+        color: colors.$light-text;
+        & h3{
+           font-size: fonts.$h3-medium;
+           margin-top: 40%;
+        }
+        background-image: url('https://images.unsplash.com/photo-1566836610593-62a64888a216?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1400&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ'), linear-gradient(rgb(96, 98, 101), #585252);
+        background-repeat: no-repeat;
+        background-blend-mode:overlay;
+        background-position: center;
+        background-size: 100%;
+        & button{
+            @include button.light-btn;
+        }
+        
+        
+    }
+    & article:nth-child(2){
+        grid-area: card2;
+        & h3{
+            font-size: fonts.$h3-small;
+        }
+        background-image: url('https://images.unsplash.com/photo-1538367999111-0d6c7fb0299f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgb(39, 83, 163), rgb(39, 83, 163));
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        color: colors.$light-text;
+        & button{
+            @include button.light-btn;
+        }
+    }
+    & article:nth-child(3){
+        grid-area: card3;
+        & h3{
+            font-size: fonts.$h3-small;
+        }
+        color: colors.$bg-color;
+        background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/erick-palacio-tJXkQ3Borlc-unsplash.jpg'), linear-gradient(rgb(41, 119, 17), rgb(12, 108, 29));
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        & button{
+            @include button.dark-btn;
+        }
+    }
+    & article:nth-child(4){
+        grid-area: card4;
+        & h3{
+            font-size: fonts.$h3-small;
+        }
+        color: colors.$light-text;
+        background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/brando-makes-branding-B0kRAfteJZY-unsplash.jpg'), linear-gradient(rgb(186, 17, 122), rgb(185, 21, 106));
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        & button{
+            @include button.light-btn;
+        }
+    }
+    & article:nth-child(5){
+        grid-area: card5;
+        & h3{
+            font-size: fonts.$h3-small;
+        }
+        color: colors.$bg-color;
+        background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/room-TF15lhUp5pk-unsplash.jpg'), linear-gradient(rgb(192, 23, 23), rgb(169, 25, 18));
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        & button{
+            @include button.dark-btn;
+        }
+    }
+}
+
+.section2{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-left: 7em;
+    margin-right: 7em;
+    justify-content: center;
+   
+    & article{ 
+        border-radius: 15px;
+        padding: 1em;
+        height: 25em;
+        padding: 5em;
+        justify-content: left;
+        align-items: center;
+        text-align: left;
+        @include image.common-bd;
+        & h3{
+            font-size: fonts.$h3-large;
+        }
+    } 
+    & article:hover {
+        background-size: 105%;
+    }
+      
+}
+.sec2art2{
+    background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/jorgen-haland-8UE83jPlNXg-unsplash.jpg'), linear-gradient(rgb(181, 170, 9), #abab07);
+    color: colors.$bg-color;
+    & button{
+        @include button.empty-btn-dark;
+    }
+}
+.sec2art1{
+    background-image: url('https://images.unsplash.com/photo-1538367999111-0d6c7fb0299f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgb(187, 187, 180), #9e9e95);
+    color: colors.$light-text;
+    & button{
+        @include button.empty-btn;
+    }
+}
+.sec2art3{
+    background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/marek-levak-_bAMrTQ6l10-unsplash-1.jpg'), linear-gradient(rgb(77, 77, 74), #575753);
+    color: colors.$light-text;
+    & button{
+        @include button.empty-btn;
+    }
+}
+
+.blog-content{
+    & h3 {
+        font-size: large;
+        & span{
+            font-size: 1.5em;
+            font-weight: bold;
+            visibility: hidden;
+            transition: visibility 1s linear;
+        }
+        &:hover{
+            & span{
+                font-size: 1.5em;
+                font-weight: bold;
+                visibility: visible;
+            }
+        }
+    }
+}
+.section3{
+    display: flex;
+    gap: 2em;
+    margin-left: 7em;
+    margin-right: 7em;
+    & article{
+        height: 25em;
+        font-weight: height;
+        border-radius: 15px;
+       // background-color: aqua;
+        padding: 1em;
+        justify-content: left;
+        text-align: left;
+        background-size: 100%;
+        @include image.common-bd;
+        & h3{
+            font-size: fonts.$h3-large;
+        }
+    }
+    & p{
+        color: rgb(9, 9, 9);
+        
+    }
+    & article:hover {
+        background-size: 105%;
+    }
+}
+.sec3art1{
+    background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/taylor-simpson-L-HhvkK7xrM-unsplash.jpg'), linear-gradient(rgb(220, 8, 125), #b90686);
+    color: colors.$bg-color;
+    & button{
+        @include button.empty-btn-dark;
+    }
+}
+.sec3art2{
+    background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/inside-weather-YBG3jopJaS0-unsplash.jpg'), linear-gradient(rgb(184, 73, 14), #d32b0a);
+    color: colors.$bg-color;
+    & button{
+        @include button.empty-btn-dark;
+    }
+}
+.section4{
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-top: 2em;
+  
+    & article{
+        height: 25em;
+        font-weight: height;
+        border-radius: 15px;
+        width: 30em;
+       // background-color: aqua;
+        padding: 1em;
+        justify-content: left;
+        text-align: left;
+        background-size: 100%;
+        @include image.common-bd;
+        & h3{
+            font-size: fonts.$h3-medium;
+        }
+    }
+    & p{
+        color: rgb(252, 251, 251);
+        
+    }
+    & article:hover {
+        background-size: 105%;
+    }
+}
+.sec4art1{
+    background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/joshua-gimben-X36zF3fS3s4-unsplash.jpg'), linear-gradient(rgb(105, 105, 104), #5e5d5d);
+    color: colors.$light-text;
+    & button{
+        @include button.empty-btn;
+    }
+}
+.sec4art2{
+    background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/room-mt8G98XVxlg-unsplash.jpg'), linear-gradient(rgb(243, 49, 250), #f310f3);
+    color: colors.$bg-color;
+     & p{
+        color: rgb(8, 8, 8);    
+    }
+    & button{
+        @include button.empty-btn-dark;
+       
+    }
+}
+.sec4art3{
+    background-image: url('https://maido-dark.fueko.net/content/images/size/w1600/2019/10/jean-philippe-delberghe-3EC_3r8-yME-unsplash.jpg'), linear-gradient(rgb(97, 99, 100), #525252);
+     color: colors.$light-text;
+    & button{
+        @include button.empty-btn;
+    }
+}
+.section5{
+    text-align: center;
+}

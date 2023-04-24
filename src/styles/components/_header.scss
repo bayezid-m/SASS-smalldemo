@@ -1,0 +1,28 @@
+@use "../variables/colors";
+@use "../mixins/active" as active;
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em;
+        
+    & img{
+        height: 2.5em;
+    }
+    & nav{
+        margin-top: 15px;
+        
+        & a{
+            text-decoration: none;
+            color: colors.$light-text;
+            margin-right: 10px;
+   
+            &:hover::after{
+                @include active.common-active;
+            }
+          
+        }
+        & i{
+            color: colors.$light-text;
+        }
+    }
+}

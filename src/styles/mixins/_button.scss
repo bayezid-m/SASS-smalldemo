@@ -1,0 +1,40 @@
+@use "../variables/colors" as colors;
+@use "../variables/font" as fonts;
+
+@mixin dark-btn{
+    background-color: colors.$bg-color;
+    color: colors.$light-text;
+    border-radius: 10px;
+    border: none;
+    font-size: fonts.$btn-text;  
+    padding: 5px;  
+    font-family:fonts.$btn-fintstyle;
+    
+}
+@mixin light-btn{
+    background-color: colors.$light-text;
+    color: colors.$bg-color;
+    border-radius: 10px;
+    border: none;
+    font-size: fonts.$btn-text;  
+    padding: 5px;
+    font-family: fonts.$btn-fintstyle;
+}
+@mixin empty-btn{
+    color: colors.$light-text;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: fonts.$btn-text;  
+    padding: 5px; 
+    background: transparent;
+    font-family:fonts.$btn-fintstyle;
+}
+@mixin empty-btn-dark{
+    color: colors.$bg-color;
+    border: 1px solid rgb(7, 7, 7);
+    border-radius: 10px;
+    font-size: fonts.$btn-text;  
+    padding: 5px; 
+    background: transparent;
+    font-family:fonts.$btn-fintstyle;
+}
